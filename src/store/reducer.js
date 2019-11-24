@@ -14,7 +14,7 @@ export default (state = defaultStore, action) => {
       const addList= state.inputValue ? [...state.list, state.inputValue] : state.list;
       return {...state, list: addList, inputValue: '' };
     case DELETE_ITEM:
-      const List = state.list;
+      const List = JSON.parse(JSON.stringify(state.list));
       List.splice(action.index,1);
       return {...state, list: List };
     default:

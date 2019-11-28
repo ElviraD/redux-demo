@@ -1,7 +1,11 @@
 import { CHANGE_INPUT, ADD_ITEM, DELETE_ITEM, GET_LIST } from './actionTypes';
 const defaultStore = {
   inputValue: '清单',
-  list: []
+  list: [
+    'Redux学习',
+    '三大原则',
+    
+  ]
 };
 
 export default (state = defaultStore, action) => {
@@ -14,9 +18,10 @@ export default (state = defaultStore, action) => {
       const addList= state.inputValue ? [...state.list, state.inputValue] : state.list;
       return {...state, list: addList, inputValue: '' };
     case DELETE_ITEM:
-      const List = state.list;
-      List.splice(action.index,1);
-      return {...state, list: List };
+      // const List = JSON.parse(JSON.stringify(state.list));
+      // List.splice(action.index,1);
+      // return {...state, list: List };
+      return {...state, list: [...state.list.slice(0,action.index), ...state.list.slice(action.index + 1)] };
     default:
       return state
   }

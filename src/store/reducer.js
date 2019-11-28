@@ -4,7 +4,8 @@ const defaultStore = {
   list: [
     'Redux学习',
     '三大原则',
-    
+    'React+Redux',
+    'React-Redux',
   ]
 };
 

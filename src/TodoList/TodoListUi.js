@@ -14,7 +14,7 @@ const TodoListUi = (props) => {
           value={props.inputValue}
           allowClear
         />
-        <Button type='primary' onClick={props.addList}>增加</Button>
+        <Button type='primary' onClick={props.addItem}>增加</Button>
       </div>
       <div className="list">
         <List

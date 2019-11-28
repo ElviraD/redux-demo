@@ -10,7 +10,7 @@ class TodoList extends Component {
     this.state = store.getState();
     this.inputChange = this.inputChange.bind(this);
     this.storeChange = this.storeChange.bind(this);
-    this.addList = this.addList.bind(this);
+    this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
     store.subscribe(this.storeChange);
   }
@@ -30,7 +30,7 @@ class TodoList extends Component {
   storeChange(){
     this.setState(store.getState())
   }
-  addList(){
+  addItem(){
     store.dispatch(addItemAction())
   }
   deleteItem(index){
@@ -40,7 +40,7 @@ class TodoList extends Component {
     return (
       <TodoListUi
         inputValue={this.state.inputValue}
-        addList={this.addList}
+        addItem={this.addItem}
         deleteItem={this.deleteItem}
         inputChange={this.inputChange}
         list={this.state.list}
